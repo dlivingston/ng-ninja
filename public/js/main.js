@@ -32986,11 +32986,14 @@ require('./angular');
 module.exports = angular;
 
 },{"./angular":1}],3:[function(require,module,exports){
+module.exports = function($scope) {
+	$scope.message = "Its..."
+}
+},{}],4:[function(require,module,exports){
 require('angular')
+var MainController = require('./controllers/MainController')
 
 var app = angular.module('app', [])
 
-app.controller('MainController', function($scope) {
-	$scope.message = 'Angular Works!'
-})
-},{"angular":2}]},{},[3]);
+app.controller('MainController', ['$scope', MainController])
+},{"./controllers/MainController":3,"angular":2}]},{},[4]);
